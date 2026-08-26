@@ -1,0 +1,47 @@
+:root {
+  /* Palette */
+  --space-indigo: #1b1f3b;
+  --violet-twilight: #454ade;
+  --hyper-magenta: #b14aed;
+  --orchid-mist: #c874d9;
+  --pastel-petal: #e1bbc9;
+
+  --void: #000000;
+  --ink: #f5f3f8;
+  --ink-muted: rgb(245 243 248 / 65%);
+  --ink-faint: rgb(245 243 248 / 35%);
+
+  /* Semantic roles */
+  --color-bg: var(--space-indigo);
+  --color-bg-void: var(--void);
+  --color-primary: var(--violet-twilight);
+  --color-accent: var(--hyper-magenta);
+  --color-accent-secondary: var(--orchid-mist);
+  --color-text: var(--ink);
+  --color-text-muted: var(--ink-muted);
+  --color-text-soft: var(--pastel-petal);
+
+  --gradient-signature: linear-gradient(
+    135deg,
+    var(--hyper-magenta),
+    var(--violet-twilight)
+  );
+
+  /* Type */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6.5rem;
+
+  /* Layout */
+  --content-max: 72rem;
+  --radius: 0.75rem;
+}

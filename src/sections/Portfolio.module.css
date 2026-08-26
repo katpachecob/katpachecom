@@ -1,0 +1,56 @@
+.portfolio {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-4) var(--space-7);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border: 1px solid rgb(245 243 248 / 12%);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.cardTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  margin-bottom: var(--space-3);
+}
+
+.cardDescription {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}

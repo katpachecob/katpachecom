@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "toggleLang": "EN"
+  },
+  "hero": {
+    "role": "Creative Technologist",
+    "scrollHint": "Scroll"
+  },
+  "about": {
+    "eyebrow": "Sobre mí",
+    "body": "Texto placeholder: acá va tu bio real."
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio"
+  },
+  "footer": {
+    "signature": "Ideas can be real",
+    "contact": "Contacto",
+    "social": "Redes"
+  }
+}
