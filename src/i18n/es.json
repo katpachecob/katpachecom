@@ -2,20 +2,59 @@
   "nav": {
     "toggleLang": "EN"
   },
+  "disclaimer": {
+    "heading": "Antes de entrar",
+    "body": "Este sitio usa tu cámara para trackear tu mano y crear partículas interactivas y un sintetizador en el Lab. Nada se graba ni se envía a ningún lado. Todo el procesamiento pasa en tu navegador. Si preferís no dar permiso, el sitio funciona igual sin cámara.",
+    "note": "Para vivir la mejor experiencia, abrí este sitio en tu computadora.",
+    "dismiss": "Entendido"
+  },
   "hero": {
     "role": "Creative Technologist",
-    "scrollHint": "Scroll"
+    "scrollHint": "Scroll",
+    "handHint": "Movés la mano para revelar",
+    "noCameraHint": "Opcional, funciona igual sin cámara",
+    "privacy": "Tu cámara no se graba ni se envía a ningún lado. Todo el procesamiento pasa en tu navegador."
   },
   "about": {
     "eyebrow": "Sobre mí",
-    "body": "Texto placeholder: acá va tu bio real."
+    "body": "Me recibí de Licenciada en Creación Sonora a fines de 2025, pero las ganas de programar siempre estuvieron ahí. Esa combinación me llevó a construir proyectos interactivos en TouchDesigner y Max/MSP, cruzando sonido, código y sensores para explorar qué pasa cuando una idea se puede tocar, escuchar y responder en tiempo real."
   },
   "portfolio": {
-    "eyebrow": "Portfolio"
+    "eyebrow": "Portfolio",
+    "prev": "Proyecto anterior",
+    "next": "Proyecto siguiente",
+    "viewProject": "Ver proyecto"
+  },
+  "project": {
+    "context": "Contexto",
+    "role": "Rol",
+    "tools": "Herramientas",
+    "process": "Proceso",
+    "viewCode": "Ver código"
+  },
+  "lab": {
+    "eyebrow": "Lab",
+    "hint": "Audio interactivo",
+    "axisX": "→ Eje X: distorsión",
+    "axisY": "↕ Eje Y: tono (octava)",
+    "hintFallback": "Sin cámara no hay sonido. Arrastrá para rotar el objeto",
+    "privacy": "Tu cámara no se graba ni se envía a ningún lado. Todo el procesamiento pasa en tu navegador.",
+    "back": "Portfolio",
+    "enableSound": "Activar sonido"
+  },
+  "labPromo": {
+    "eyebrow": "Laboratorio",
+    "heading": "Vive la experiencia",
+    "body": "Un espacio para tocar, mover y escuchar, directo en el navegador.",
+    "cta": "Entrar al Lab"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "heading": "¿Trabajamos juntos?"
   },
   "footer": {
-    "signature": "Ideas can be real",
     "contact": "Contacto",
-    "social": "Redes"
+    "social": "Redes",
+    "lab": "Lab"
   }
 }

@@ -1,10 +1,9 @@
 :root {
   /* Palette */
-  --space-indigo: #1b1f3b;
-  --violet-twilight: #454ade;
-  --hyper-magenta: #b14aed;
-  --orchid-mist: #c874d9;
-  --pastel-petal: #e1bbc9;
+  --solar-flare: #ff7e3d;
+  --ember-glow: #e8632a;
+  --amber-mist: #ffb37a;
+  --peach-veil: #ffd8a8;
 
   --void: #000000;
   --ink: #f5f3f8;
@@ -12,23 +11,24 @@
   --ink-faint: rgb(245 243 248 / 35%);
 
   /* Semantic roles */
-  --color-bg: var(--space-indigo);
+  --color-bg: var(--void);
   --color-bg-void: var(--void);
-  --color-primary: var(--violet-twilight);
-  --color-accent: var(--hyper-magenta);
-  --color-accent-secondary: var(--orchid-mist);
+  --color-primary: var(--solar-flare);
+  --color-accent: var(--ember-glow);
+  --color-accent-secondary: var(--amber-mist);
   --color-text: var(--ink);
   --color-text-muted: var(--ink-muted);
-  --color-text-soft: var(--pastel-petal);
+  --color-text-soft: var(--peach-veil);
 
   --gradient-signature: linear-gradient(
     135deg,
-    var(--hyper-magenta),
-    var(--violet-twilight)
+    var(--ember-glow),
+    var(--solar-flare)
   );
 
   /* Type */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-impact: 'Unbounded', 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Instrument Sans', system-ui, sans-serif;
   --font-mono: 'Space Mono', ui-monospace, monospace;
 

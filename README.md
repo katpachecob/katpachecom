@@ -23,12 +23,21 @@ npm run dev
 
 ```
 src/
-  pages/       Home.tsx, Lab.tsx — componen las rutas
-  sections/    Hero, About, Portfolio, Footer
-  i18n/        LanguageContext + diccionarios es/en
-  styles/      tokens.css (paleta, tipografía, spacing) + global.css
-  lib/         utilidades de MediaPipe / Three.js (Phase 2+)
+  pages/               Home.tsx, Lab.tsx, ProjectDetail.tsx — componen las rutas
+  sections/            Hero, About, Portfolio, Contact, Footer
+  components/          Reveal, CameraBadge, ParticleText, DisclaimerModal — reusables entre secciones
+  data/                projects.ts — modelo de datos de los proyectos (bilingüe)
+  three/                HandTrail, PortfolioCarousel, LabScene
+  lib/mediapipe/        useHandTracking — hook de cámara + Hand Landmarker
+  lib/audio/           useHandSynth — sintetizador Web Audio controlado por mano
+  lib/                  prefersReducedMotion
+  i18n/                LanguageContext + diccionarios es/en
+  styles/              tokens.css (paleta, tipografía, spacing) + global.css
 ```
+
+### Hand tracking
+
+`useHandTracking` (`src/lib/mediapipe/`) pide cámara, corre `@mediapipe/tasks-vision` Hand Landmarker en modo VIDEO y expone la posición de la palma vía un `ref` (no state — evita re-render en cada frame). El wasm y el modelo se cargan on-demand desde el CDN oficial de Google la primera vez que una sección con cámara se monta; ningún frame de video sale del navegador. Si se deniega el permiso o el navegador no soporta `getUserMedia`, todo cae a un modo ambiente/idle sin romper nada (partículas a la deriva en el Hero, drag manual en el Lab).
 
 ## Paleta
 
@@ -43,12 +52,16 @@ src/
 ## Roadmap de fases
 
 - [x] **Phase 0** — Setup: scaffold, routing, tokens, i18n, secciones placeholder
-- [ ] **Phase 1** — Sitio base con contenido placeholder pulido visualmente (sin cámara)
-- [ ] **Phase 2** — Hero interactivo: orbe + partículas reaccionando a la mano vía MediaPipe
-- [ ] **Phase 3** — Lab: rotación de objeto 3D con la mano + footer con partículas formando la frase en scroll
-- [ ] **Phase 4** — Contenido real (proyectos, fotos, bio) reemplazando placeholders
-- [ ] **Phase 5** — Pulido, accesibilidad, performance, deploy a Vercel
+- [x] **Phase 1** — Sitio base con contenido placeholder pulido visualmente (sin cámara)
+- [x] **Phase 2** — Hero interactivo: orbe + partículas reaccionando a la mano vía MediaPipe
+- [x] **Phase 3** — Lab: rotación de objeto 3D con la mano (+ fallback de drag) + footer con partículas reales formando "Ideas can be real" en scroll
+- [ ] **Phase 4** — Contenido real (tu nombre, bio, los 4 proyectos, imágenes) reemplazando placeholders — **pendiente de tu contenido**
+- [ ] **Phase 5** — Accesibilidad/performance ya cubiertos en el camino (reduced motion, focus-visible, lazy-loading de Three.js/MediaPipe por ruta, `sr-only` en el texto de partículas). **Deploy a Vercel pendiente** — falta conectar GitHub/Vercel
+
+## Proyectos
+
+Los 4 proyectos viven en `src/data/projects.ts` (`title`, `slug`, `tag`, `colors`, `summary`, `context`, `role`, `tools`, `process`, todo bilingüe). El grid/carousel (`Portfolio.tsx`) y la página de detalle (`/portfolio/:slug`, `pages/ProjectDetail.tsx`) leen del mismo array. Solo "Anatomías Inexistentes" tiene contenido real; los otros 3 quedan con placeholders hasta tener el material.
 
 ## Future improvements
 
-- **Modelo de datos de proyectos**: hoy los 4 proyectos están hardcodeados en `src/sections/Portfolio.tsx`. Si el portfolio crece más allá de un puñado de proyectos, migrar a un array/JSON estructurado (`title`, `slug`, `tags`, `cover`, `gallery`, `description.es/en`) para poder mapear el grid dinámicamente y, eventualmente, generar páginas de case study por proyecto.
+- **Galería por proyecto**: `ProjectDetail` hoy es solo texto (contexto/rol/herramientas/proceso). Si hay fotos/video de las performances, sumar un campo `gallery` al modelo de datos y un bloque de medios en la página de detalle.

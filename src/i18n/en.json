@@ -2,20 +2,59 @@
   "nav": {
     "toggleLang": "ES"
   },
+  "disclaimer": {
+    "heading": "Before you go in",
+    "body": "This site uses your camera to track your hand and drive interactive particles and a synth in the Lab. Nothing is recorded or sent anywhere. All processing happens in your browser. If you'd rather not grant access, the site still works without a camera.",
+    "note": "For the best experience, open this site on a computer.",
+    "dismiss": "Got it"
+  },
   "hero": {
     "role": "Creative Technologist",
-    "scrollHint": "Scroll"
+    "scrollHint": "Scroll",
+    "handHint": "Move your hand to reveal",
+    "noCameraHint": "Optional, works the same without a camera",
+    "privacy": "Your camera is never recorded or sent anywhere. All processing happens in your browser."
   },
   "about": {
     "eyebrow": "About me",
-    "body": "Placeholder text: your real bio goes here."
+    "body": "I graduated with a degree in Sound Creation in late 2025, though the pull toward programming had always been there. That combination led me to build interactive projects in TouchDesigner and Max/MSP, crossing sound, code, and sensors to explore what happens when an idea can be touched, heard, and respond in real time."
   },
   "portfolio": {
-    "eyebrow": "Portfolio"
+    "eyebrow": "Portfolio",
+    "prev": "Previous project",
+    "next": "Next project",
+    "viewProject": "View project"
+  },
+  "project": {
+    "context": "Context",
+    "role": "Role",
+    "tools": "Tools",
+    "process": "Process",
+    "viewCode": "View code"
+  },
+  "lab": {
+    "eyebrow": "Lab",
+    "hint": "Interactive audio",
+    "axisX": "→ X axis: distortion",
+    "axisY": "↕ Y axis: pitch (octave)",
+    "hintFallback": "No camera, no sound. Drag to rotate the object",
+    "privacy": "Your camera is never recorded or sent anywhere. All processing happens in your browser.",
+    "back": "Portfolio",
+    "enableSound": "Enable sound"
+  },
+  "labPromo": {
+    "eyebrow": "Laboratory",
+    "heading": "Live the experience",
+    "body": "A space to touch, move, and listen, straight in the browser.",
+    "cta": "Enter the Lab"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Let's work together"
   },
   "footer": {
-    "signature": "Ideas can be real",
     "contact": "Contact",
-    "social": "Social"
+    "social": "Social",
+    "lab": "Lab"
   }
 }

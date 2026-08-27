@@ -13,44 +13,89 @@
   margin-bottom: var(--space-4);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
+.stage {
+  position: relative;
+  height: 28rem;
+  touch-action: none;
+}
+
+.stage :global(canvas) {
+  cursor: grab;
 }
 
 @media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .stage {
+    height: 20rem;
   }
 }
 
-.card {
-  border: 1px solid rgb(245 243 248 / 12%);
-  border-radius: var(--radius);
-  padding: var(--space-4);
-  transition: border-color 0.2s ease;
+.info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-width: 22rem;
+  pointer-events: none;
 }
 
-.card:hover {
-  border-color: var(--color-accent);
+.title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-1);
 }
 
-.cardTitle {
-  font-size: 1.25rem;
-  margin-bottom: var(--space-2);
-}
-
-.cardTag {
+.tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-soft);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
-.cardDescription {
+.description {
   color: var(--color-text-muted);
   font-size: 0.95rem;
+}
+
+.viewProject {
+  display: inline-block;
+  margin-top: var(--space-2);
+  pointer-events: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  transition: opacity 0.2s ease;
+}
+
+.viewProject:hover {
+  opacity: 0.7;
+}
+
+.arrows {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.arrows button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgb(245 243 248 / 20%);
+  display: grid;
+  place-items: center;
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.arrows button:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.arrows button:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
