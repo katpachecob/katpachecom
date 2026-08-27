@@ -26,14 +26,27 @@
   color: var(--color-text);
 }
 
-.overlay {
+.bottomBar {
   position: absolute;
-  left: var(--space-4);
+  inset-inline: var(--space-4);
   bottom: var(--space-4);
   z-index: 1;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.overlay {
+  display: flex;
   align-items: center;
   gap: var(--space-3);
+  min-width: 0;
+}
+
+.overlayText {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -55,13 +68,11 @@
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   color: var(--color-text-soft);
+  overflow-wrap: break-word;
 }
 
 .soundButton {
-  position: absolute;
-  right: var(--space-4);
-  bottom: var(--space-4);
-  z-index: 1;
+  flex-shrink: 0;
   padding: 0.6rem 1.1rem;
   border-radius: 999px;
   border: 1px solid rgb(245 243 248 / 20%);
@@ -71,6 +82,12 @@
   text-transform: uppercase;
   color: var(--color-text);
   transition: border-color 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .overlayText {
+    max-width: 60vw;
+  }
 }
 
 .soundButton:hover {

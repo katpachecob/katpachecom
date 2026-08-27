@@ -26,27 +26,29 @@ export function Lab() {
         <Link to="/">← {t('lab.back')}</Link>
       </nav>
 
-      <div className={styles.overlay}>
-        <CameraBadge videoRef={videoRef} live={status === 'granted'} privacyLabel={t('lab.privacy')} />
-        <div>
-          <p className={styles.eyebrow}>{t('lab.eyebrow')}</p>
-          <p className={styles.hint}>{t('lab.hint')}</p>
-          {cameraBlocked ? (
-            <p className={styles.axis}>{t('lab.hintFallback')}</p>
-          ) : (
-            <>
-              <p className={styles.axis}>{t('lab.axisX')}</p>
-              <p className={styles.axis}>{t('lab.axisY')}</p>
-            </>
-          )}
+      <div className={styles.bottomBar}>
+        <div className={styles.overlay}>
+          <CameraBadge videoRef={videoRef} live={status === 'granted'} privacyLabel={t('lab.privacy')} />
+          <div className={styles.overlayText}>
+            <p className={styles.eyebrow}>{t('lab.eyebrow')}</p>
+            <p className={styles.hint}>{t('lab.hint')}</p>
+            {cameraBlocked ? (
+              <p className={styles.axis}>{t('lab.hintFallback')}</p>
+            ) : (
+              <>
+                <p className={styles.axis}>{t('lab.axisX')}</p>
+                <p className={styles.axis}>{t('lab.axisY')}</p>
+              </>
+            )}
+          </div>
         </div>
-      </div>
 
-      {!started && (
-        <button type="button" className={styles.soundButton} onClick={start}>
-          {t('lab.enableSound')}
-        </button>
-      )}
+        {!started && (
+          <button type="button" className={styles.soundButton} onClick={start}>
+            {t('lab.enableSound')}
+          </button>
+        )}
+      </div>
     </section>
   )
 }
