@@ -50,6 +50,30 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: 'disco-magico',
+    title: 'Disco Mágico',
+    tag: 'Installation',
+    colors: ['#e8632a', '#ffd8a8'],
+    cover: '/projects/disco-magico.webp',
+    summary: {
+      es: 'Instalación informativa que narra la historia de una escultura mexicana memorable, atravesada por el momento histórico y sangriento que vivía el país durante los Juegos Olímpicos México 1968.',
+      en: 'An informative installation tracing the story of a memorable Mexican sculpture, set against the bloody historical moment the country was living through during the 1968 Mexico City Olympics.',
+    },
+    context: {
+      es: 'El proyecto retoma la historia de una escultura emblemática de México y la entreteje con el contexto que atravesaba el país en esas fechas: los Juegos Olímpicos México 1968, marcados también por un episodio histórico y sangriento. A través de mapping de video sobre la pieza y un conjunto de pantallas, la instalación invita a reconstruir esa memoria colectiva.',
+      en: 'The project revisits the story of an emblematic Mexican sculpture and weaves it together with what the country was going through at the time: the 1968 Mexico City Olympics, also marked by a bloody historical episode. Through video mapping onto the piece and a set of screens, the installation invites viewers to reconstruct that collective memory.',
+    },
+    role: {
+      es: 'Concepto, diseño y desarrollo técnico de punta a punta.',
+      en: 'End-to-end concept, design, and technical development.',
+    },
+    tools: ['Arduino', 'Resolume Arena', 'After Effects', 'Ableton Live'],
+    process: {
+      es: 'Un Arduino dispara la secuencia de la experiencia, Resolume Arena maneja el mapping de video sobre la escultura y las pantallas, After Effects se usó para crear y editar el material audiovisual proyectado, y Ableton Live maneja el diseño sonoro de la pieza.',
+      en: "An Arduino triggers the sequence of the experience, Resolume Arena handles the video mapping onto the sculpture and the screens, After Effects was used to create and edit the projected audiovisual material, and Ableton Live handles the piece's sound design.",
+    },
+  },
+  {
     slug: '3xr',
     title: '3XR',
     tag: 'Creative Code',
