@@ -76,7 +76,7 @@ export const projects: Project[] = [
   {
     slug: '3xr',
     title: '3XR',
-    tag: 'Creative Code',
+    tag: 'Interactive',
     colors: ['#ff7e3d', '#e8632a'],
     cover: '/projects/3xr-1.webp',
     gallery: ['/projects/3xr-2.webp', '/projects/3xr-3.webp', '/projects/3xr-4.webp'],
