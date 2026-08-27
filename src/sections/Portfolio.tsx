@@ -23,14 +23,16 @@ export function Portfolio() {
 
       <Reveal delay={0.1}>
         <div className={styles.stage}>
-          <Suspense fallback={null}>
-            <PortfolioCarousel
-              colors={projects.map((p) => p.colors as [string, string])}
-              covers={projects.map((p) => p.cover)}
-              active={active}
-              onActiveChange={setActive}
-            />
-          </Suspense>
+          <div className={styles.canvasStage}>
+            <Suspense fallback={null}>
+              <PortfolioCarousel
+                colors={projects.map((p) => p.colors as [string, string])}
+                covers={projects.map((p) => p.cover)}
+                active={active}
+                onActiveChange={setActive}
+              />
+            </Suspense>
+          </div>
 
           <div className={styles.info}>
             <AnimatePresence mode="wait">

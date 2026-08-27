@@ -78,6 +78,9 @@ export function useHandAudio(handRef: MutableRefObject<HandPoint | null>) {
     if (ctxRef.current) return
     const ctx = new AudioContext()
     ctxRef.current = ctx
+    // iOS Safari can create the context in a suspended state even inside a
+    // user gesture — without an explicit resume() here, playback stays silent.
+    if (ctx.state === 'suspended') await ctx.resume()
 
     const analyser = ctx.createAnalyser()
     analyser.fftSize = 128
