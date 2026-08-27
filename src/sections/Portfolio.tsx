@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
@@ -14,6 +14,11 @@ export function Portfolio() {
   const { t, lang } = useLanguage()
   const [active, setActive] = useState(0)
   const project = projects[active]
+  // Stable references — recreating these on every `active` change would
+  // re-trigger the carousel's texture-loading effects and briefly reset
+  // already-loaded cover images back to their gradient placeholder.
+  const carouselColors = useMemo(() => projects.map((p) => p.colors as [string, string]), [])
+  const carouselCovers = useMemo(() => projects.map((p) => p.cover), [])
 
   return (
     <section id="portfolio" className={styles.portfolio}>
@@ -26,8 +31,8 @@ export function Portfolio() {
           <div className={styles.canvasStage}>
             <Suspense fallback={null}>
               <PortfolioCarousel
-                colors={projects.map((p) => p.colors as [string, string])}
-                covers={projects.map((p) => p.cover)}
+                colors={carouselColors}
+                covers={carouselCovers}
                 active={active}
                 onActiveChange={setActive}
               />

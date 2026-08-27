@@ -38,6 +38,7 @@ function makeDistortionCurve(amount: number) {
 export function useHandAudio(handRef: MutableRefObject<HandPoint | null>) {
   const [started, setStarted] = useState(false)
   const ctxRef = useRef<AudioContext | null>(null)
+  const audioElRef = useRef<HTMLAudioElement | null>(null)
   const analyserRef = useRef<AnalyserNode | null>(null)
   const sourceRef = useRef<AudioBufferSourceNode | null>(null)
   const dryGainRef = useRef<GainNode | null>(null)
@@ -71,6 +72,7 @@ export function useHandAudio(handRef: MutableRefObject<HandPoint | null>) {
   useEffect(() => {
     return () => {
       ctxRef.current?.close()
+      audioElRef.current?.pause()
     }
   }, [])
 
@@ -85,8 +87,18 @@ export function useHandAudio(handRef: MutableRefObject<HandPoint | null>) {
     const analyser = ctx.createAnalyser()
     analyser.fftSize = 128
     analyser.smoothingTimeConstant = 0.6
-    analyser.connect(ctx.destination)
     analyserRef.current = analyser
+
+    // iOS Safari's hardware silent switch mutes raw Web Audio API output
+    // (ctx.destination) but not real <audio>/<video> element playback.
+    // Routing the final mix through a MediaStream into an <audio> element
+    // keeps this audible even when the phone is set to silent.
+    const streamDestination = ctx.createMediaStreamDestination()
+    analyser.connect(streamDestination)
+    const audioEl = new Audio()
+    audioEl.srcObject = streamDestination.stream
+    audioElRef.current = audioEl
+    await audioEl.play()
 
     // Dry/wet crossfade instead of rebuilding the curve every frame — cheap
     // and glitch-free to drive continuously from hand position.

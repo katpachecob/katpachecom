@@ -33,7 +33,18 @@ export function Hero() {
 
       <motion.div className={styles.frame} initial="hidden" animate="visible" variants={container}>
         <motion.div className={styles.nav} variants={item} transition={itemTransition}>
-          <span>KP</span>
+          <div className={styles.brand}>
+            <span>KP</span>
+            <a
+              className={styles.cvLink}
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('nav.cv')}
+            >
+              {t('nav.cv')}
+            </a>
+          </div>
           <motion.button
             type="button"
             className={styles.langToggle}

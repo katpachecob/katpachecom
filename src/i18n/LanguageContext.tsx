@@ -11,7 +11,7 @@ const STORAGE_KEY = 'portfolio-lang'
 function detectInitialLang(): Lang {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (stored === 'es' || stored === 'en') return stored
-  return navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en'
+  return 'es'
 }
 
 function resolve(dict: Dictionary, path: string): string {
