@@ -8,7 +8,7 @@ export function About() {
   return (
     <section className={styles.about}>
       <Reveal>
-        <p className={styles.eyebrow}>{t('about.eyebrow')}</p>
+        <h2 className={styles.eyebrow}>{t('about.eyebrow')}</h2>
       </Reveal>
       <Reveal delay={0.12}>
         <p className={styles.body}>{t('about.body')}</p>

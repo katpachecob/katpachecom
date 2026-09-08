@@ -23,7 +23,7 @@ export function Portfolio() {
   return (
     <section id="portfolio" className={styles.portfolio}>
       <Reveal>
-        <p className={styles.eyebrow}>{t('portfolio.eyebrow')}</p>
+        <h2 className={styles.eyebrow}>{t('portfolio.eyebrow')}</h2>
       </Reveal>
 
       <Reveal delay={0.1}>

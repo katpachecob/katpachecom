@@ -4,15 +4,28 @@ import { useLanguage } from '../i18n/LanguageContext'
 import { useHandTracking } from '../lib/mediapipe/useHandTracking'
 import { useHandAudio } from '../lib/audio/useHandAudio'
 import { CameraBadge } from '../components/CameraBadge'
+import { useSEO } from '../lib/seo/useSEO'
 import styles from './Lab.module.css'
 
 const LabScene = lazy(() => import('../three/LabScene').then((m) => ({ default: m.LabScene })))
 
+const SEO_COPY = {
+  es: {
+    title: 'Lab — Kat Pacheco',
+    description: 'Laboratorio de audio interactivo controlado con la mano, directo en el navegador.',
+  },
+  en: {
+    title: 'Lab — Kat Pacheco',
+    description: 'Interactive, hand-controlled audio lab, running straight in the browser.',
+  },
+}
+
 export function Lab() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const { videoRef, handRef, status } = useHandTracking()
   const { start, started, analyserRef, distortionRef } = useHandAudio(handRef)
   const cameraBlocked = status === 'denied' || status === 'unsupported'
+  useSEO({ ...SEO_COPY[lang], path: '/lab' })
 
   return (
     <section className={styles.lab}>

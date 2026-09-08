@@ -4,14 +4,108 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio de creative technologist — proyectos interactivos con computer vision, 3D y experiencias web." />
+    <meta name="description" content="Kat Pacheco es creative technologist: instalaciones y experiencias interactivas con computer vision, TouchDesigner y sonido en tiempo real." />
+    <link rel="canonical" href="https://katpache.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500&family=Space+Mono:wght@400;700&family=Unbounded:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
-    <title>Portfolio — Creative Technologist</title>
+    <title>Kat Pacheco — Creative Technologist</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kat Pacheco" />
+    <meta property="og:title" content="Kat Pacheco — Creative Technologist" />
+    <meta property="og:description" content="Instalaciones y experiencias interactivas con computer vision, TouchDesigner y sonido en tiempo real." />
+    <meta property="og:url" content="https://katpache.com/" />
+    <meta property="og:image" content="https://katpache.com/projects/anatomias-inexistentes.webp" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kat Pacheco — Creative Technologist" />
+    <meta name="twitter:description" content="Instalaciones y experiencias interactivas con computer vision, TouchDesigner y sonido en tiempo real." />
+    <meta name="twitter:image" content="https://katpache.com/projects/anatomias-inexistentes.webp" />
+
+    <!-- Structured data: entity + portfolio works, for AI/answer engines that don't execute JS -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kat Pacheco",
+        "alternateName": "KP",
+        "jobTitle": "Creative Technologist",
+        "url": "https://katpache.com/",
+        "image": "https://katpache.com/projects/anatomias-inexistentes.webp",
+        "email": "mailto:hola@katpache.com",
+        "sameAs": [
+          "https://www.instagram.com/katpachecobc",
+          "https://github.com/katpachecob"
+        ],
+        "knowsAbout": [
+          "Computer Vision",
+          "TouchDesigner",
+          "Interactive Installations",
+          "Generative Art",
+          "Max/MSP",
+          "Creative Coding"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Kat Pacheco — Portfolio",
+        "url": "https://katpache.com/",
+        "about": { "@type": "Person", "name": "Kat Pacheco" },
+        "hasPart": [
+          {
+            "@type": "CreativeWork",
+            "name": "Anatomías [in]existentes",
+            "url": "https://katpache.com/portfolio/anatomias-inexistentes",
+            "description": "Performance interactiva que traduce el movimiento y el sonido de un clarinete en visuales generativas en tiempo real.",
+            "creator": { "@type": "Person", "name": "Kat Pacheco" },
+            "keywords": "TouchDesigner, MediaPipe, Teachable Machine, Ableton Live"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Disco Mágico",
+            "url": "https://katpache.com/portfolio/disco-magico",
+            "description": "Instalación informativa que narra la historia de una escultura mexicana memorable, atravesada por los Juegos Olímpicos México 1968.",
+            "creator": { "@type": "Person", "name": "Kat Pacheco" },
+            "keywords": "Arduino, Resolume Arena, After Effects, Ableton Live"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "3XR",
+            "url": "https://katpache.com/portfolio/3xr",
+            "description": "Experiencia audiovisual interactiva que promueve el cuidado del medio ambiente a través de reducir, reciclar y reutilizar.",
+            "creator": { "@type": "Person", "name": "Kat Pacheco" },
+            "keywords": "TouchDesigner, MediaPipe, Ableton Live, Adobe Premiere"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Tu Huella",
+            "url": "https://katpache.com/portfolio/tu-huella",
+            "description": "Instalación con Arduino que, al acercar la mano, recorre la historia de una huella: primero hermosa, luego progresivamente destruida.",
+            "creator": { "@type": "Person", "name": "Kat Pacheco" },
+            "keywords": "Arduino, TouchDesigner"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Museo de Anamorfosis",
+            "url": "https://katpache.com/portfolio/museo-anamorfosis",
+            "description": "Dispositivo interactivo que bifurca la lectura de una misma obra según el movimiento del espectador.",
+            "creator": { "@type": "Person", "name": "Kat Pacheco" },
+            "keywords": "TouchDesigner, DMX"
+          }
+        ]
+      }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MZ5T09HGJ"></script>
@@ -25,6 +119,49 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <main style="max-width: 40rem; margin: 3rem auto; padding: 0 1.5rem; font-family: sans-serif; line-height: 1.6;">
+        <h1>Kat Pacheco — Creative Technologist</h1>
+        <p>
+          Licenciada en Creación Sonora que construye proyectos interactivos en TouchDesigner y
+          Max/MSP, cruzando sonido, código y sensores para explorar qué pasa cuando una idea se
+          puede tocar, escuchar y responder en tiempo real.
+        </p>
+        <h2>Portfolio</h2>
+        <ul>
+          <li>
+            <a href="/portfolio/anatomias-inexistentes">Anatomías [in]existentes</a> — Performance
+            interactiva que traduce el movimiento y el sonido de un clarinete en visuales
+            generativas en tiempo real.
+          </li>
+          <li>
+            <a href="/portfolio/disco-magico">Disco Mágico</a> — Instalación informativa sobre una
+            escultura mexicana emblemática y los Juegos Olímpicos México 1968.
+          </li>
+          <li>
+            <a href="/portfolio/3xr">3XR</a> — Experiencia audiovisual interactiva sobre reducir,
+            reciclar y reutilizar.
+          </li>
+          <li>
+            <a href="/portfolio/tu-huella">Tu Huella</a> — Instalación con Arduino que recorre la
+            historia de una huella a lo largo del tiempo.
+          </li>
+          <li>
+            <a href="/portfolio/museo-anamorfosis">Museo de Anamorfosis</a> — Dispositivo
+            interactivo que bifurca la lectura de una obra según el movimiento del espectador.
+          </li>
+        </ul>
+        <h2>Lab</h2>
+        <p><a href="/lab">Laboratorio de audio interactivo</a>, directo en el navegador.</p>
+        <h2>Contacto</h2>
+        <p>
+          <a href="mailto:hola@katpache.com">hola@katpache.com</a> ·
+          <a href="https://www.instagram.com/katpachecobc">Instagram</a> ·
+          <a href="https://github.com/katpachecob">GitHub</a>
+        </p>
+        <p>Esta experiencia requiere JavaScript para su versión interactiva completa.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

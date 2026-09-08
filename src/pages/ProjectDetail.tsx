@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Reveal } from '../components/Reveal'
 import { useLanguage } from '../i18n/LanguageContext'
 import { projects } from '../data/projects'
+import { useSEO } from '../lib/seo/useSEO'
 import styles from './ProjectDetail.module.css'
 
 function toYouTubeEmbedUrl(url: string): string | null {
@@ -13,6 +14,14 @@ export function ProjectDetail() {
   const { t, lang } = useLanguage()
   const { slug } = useParams()
   const index = projects.findIndex((p) => p.slug === slug)
+  const found = index !== -1 ? projects[index] : undefined
+
+  useSEO({
+    title: found ? `${found.title} — Kat Pacheco` : 'Kat Pacheco — Creative Technologist',
+    description: found ? found.summary[lang] : '',
+    path: `/portfolio/${slug ?? ''}`,
+    image: found?.cover ? `https://katpache.com${found.cover}` : undefined,
+  })
 
   if (index === -1) return <Navigate to="/" replace />
 

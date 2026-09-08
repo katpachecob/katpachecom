@@ -7,6 +7,21 @@ import { LabPromo } from '../sections/LabPromo'
 import { Contact } from '../sections/Contact'
 import { Footer } from '../sections/Footer'
 import { DisclaimerModal } from '../components/DisclaimerModal'
+import { useLanguage } from '../i18n/LanguageContext'
+import { useSEO } from '../lib/seo/useSEO'
+
+const SEO_COPY = {
+  es: {
+    title: 'Kat Pacheco — Creative Technologist',
+    description:
+      'Instalaciones y experiencias interactivas con computer vision, TouchDesigner y sonido en tiempo real.',
+  },
+  en: {
+    title: 'Kat Pacheco — Creative Technologist',
+    description:
+      'Interactive installations and experiences built with computer vision, TouchDesigner, and real-time sound.',
+  },
+}
 
 export function Home() {
   const shouldReduceMotion = useReducedMotion()
@@ -15,6 +30,8 @@ export function Home() {
   const skewRaw = useTransform(scrollVelocity, [-3500, 0, 3500], [-5, 0, 5])
   const skew = useSpring(skewRaw, { stiffness: 220, damping: 22, mass: 0.4 })
   const [disclaimerOpen, setDisclaimerOpen] = useState(true)
+  const { lang } = useLanguage()
+  useSEO({ ...SEO_COPY[lang], path: '/' })
 
   return (
     <>
