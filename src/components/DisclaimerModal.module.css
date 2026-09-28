@@ -20,9 +20,24 @@
   background: var(--color-bg-void);
 }
 
+.langToggle {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.langToggle:hover {
+  color: var(--color-text);
+}
+
 .heading {
   font-size: 1.25rem;
   margin-bottom: var(--space-3);
+  padding-right: var(--space-6);
 }
 
 .body {

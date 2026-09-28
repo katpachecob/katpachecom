@@ -9,7 +9,7 @@ interface DisclaimerModalProps {
 }
 
 export function DisclaimerModal({ open, onDismiss }: DisclaimerModalProps) {
-  const { t } = useLanguage()
+  const { t, toggleLang } = useLanguage()
   const dismissRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -45,6 +45,9 @@ export function DisclaimerModal({ open, onDismiss }: DisclaimerModalProps) {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             onClick={(e) => e.stopPropagation()}
           >
+            <button type="button" className={styles.langToggle} onClick={toggleLang}>
+              {t('nav.toggleLang')}
+            </button>
             <h2 id="disclaimer-heading" className={styles.heading}>
               {t('disclaimer.heading')}
             </h2>
